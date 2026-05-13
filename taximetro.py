@@ -5,8 +5,10 @@ def calculate_fare(seconds_stopped, seconds_moving):
     Calcular la tarifa total en euros.
     - Stopped: 0.02 €/s
     - Moving: 0.05 €/s
+    - tarifa_inicial: 3 €
     """
-    fare = seconds_stopped * 0.02 + seconds_moving * 0.05
+    tarifa_inicial = 3.00
+    fare = seconds_stopped * 0.02 + seconds_moving * 0.05 + tarifa_inicial
     print(f"Este es el total: {fare}")
     return fare
 
