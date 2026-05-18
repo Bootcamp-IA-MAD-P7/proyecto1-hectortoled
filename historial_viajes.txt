@@ -1,0 +1,1 @@
+Viaje: Stopped=13.5s, Mov=4.7s, Total=3.51
