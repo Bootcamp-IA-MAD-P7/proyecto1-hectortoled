@@ -1,30 +1,21 @@
 import time
 
 def calculate_fare(seconds_stopped, seconds_moving):
-    """
-    # ---CONFIGURACIÓN DE TARIFAS (Nivel Medio) ---
-    Calcular la tarifa total en euros.
-    - Stopped: 0.02 €/s
-    - Moving: 0.05 €/s
-    - tarifa_inicial: 3 €
-
-    fare = (seconds_stopped * tarifa_parado) + (seconds_moving * tarifa_en_movimiento) + tarifa_inicial
-
-    # Cálculo matemático:
-    fare = (seconds_stopped * tarifa_parado) + (seconds_moving * tarifa_en_movimiento) + tarifa_inicial
-    
-    # ---REGISTRO HISTÓRICO (Nivel Medio) ---
-    # Esto crea el archivo 'historial_viajes.txt' si no existe y añade el viaje
-    
-    """
+    # 1. Configuración dinámica de tarifas (Nivel Medio)
+    tarifa_parado = 0.02
+    tarifa_en_movimiento = 0.05
     tarifa_inicial = 3.00
-    fare = seconds_stopped * 0.02 + seconds_moving * 0.05 + tarifa_inicial
 
+    # 2. Cálculo matemático usando las variables declaradas arriba
+    fare = (seconds_stopped * tarifa_parado) + (seconds_moving * tarifa_en_movimiento) + tarifa_inicial
+
+    # 3. Registro histórico en archivo plano con símbolo de euro (Nivel Medio)
     with open("historial_viajes.txt", "a") as file:
-        file.write(f"Viaje: Stopped={seconds_stopped:.1f}s, Mov={seconds_moving:.1f}s, Total={fare:.2f}\n")
+        file.write(f"Viaje: Stopped={seconds_stopped:.1f}s, Mov={seconds_moving:.1f}s, Total={fare:.2f}€\n")
    
     print(f"Este es el total: {fare:.2f}€")
     return fare
+
 
 def taximeter():
     """
